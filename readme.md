@@ -8,6 +8,24 @@ Do a fetch request with random servers.
 - Able to mask your user agents
 - Able to bypass rate limits (Do many requests at once)
 
+## About This Project
+- Able to choose a random server to make a request
+- Uses axios
+- Server addresses can be choosen for specific request
 
-
-
+## Setup a relay server
+Source code: [/relayServer](/relayServer/index.js)
+- Try to use different service providers to host them
+- They are **not** rate limited/protected from any kinds of attacks by other people out there
+    - You **should** set an encryption/do a verification to make sure that every request is made by an authorized person
+    
+- API: `[POST] /` POST request to `/` endpoint with the body as the fetch query
+    - e.g.
+    ```js
+    fetch(`https://your-server.example`, {
+      method:"POST",
+      body: JSON.stringify({
+        url: 'https://example.com'
+      })
+    }).then(r=>r.text()).then(r=>r)
+    ```
