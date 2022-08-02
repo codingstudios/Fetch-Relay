@@ -31,14 +31,16 @@ Source code: [/relayServer](/relayServer/index.js)
 
 ## The usage of Fetch-Relay
 ```js
-    const { setRelays, fetch } = require('fetch-relay');
+const { setRelays, fetch } = require('fetch-relay');
     
-    setRelays(['https://relay-server-1.example', 'https://relay-server-2.example', ...]);
+setRelays(['https://relay-server-1.example', 'https://relay-server-2.example', ...]);
     
-    fetch({ 
-        url: 'https://example.com', // url to make request to with a relay server
-        method: "POST", // method to be used
-        data: { // data (parsed and stringify) by axios
-            value: "TEST"
-        }
-    }).then()
+fetch({ 
+   url: 'https://example.com', // url to make request to with a relay server
+   method: "POST", // method to be used
+   data: { // data (parsed and stringify) by axios
+       value: "TEST"
+   }
+}).then()
+
+```
